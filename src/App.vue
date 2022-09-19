@@ -1,17 +1,49 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
+    <div>
+      <img style="width: 1000px; flex-shrink: 0;" alt="Vue logo" v-lazy="img" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  data() {
+    return {
+      img: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%3A%2F%2Fdingyue.ws.126.net%2F2021%2F1115%2Fee91b90cj00r2lzak001dc000hs00bsg.jpg%26thumbnail%3D650x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666192041&t=b5979198d5be9246a2589e1a2730a7cf'
+    }
   }
 }
 </script>

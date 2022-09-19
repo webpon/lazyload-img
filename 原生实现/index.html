@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>懒加载</title>
+</head>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                margin-top: 400px;
+                width: 250px;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+        <img src="img/pic.gif" data-url="img/logo.png">
+
+        <script>
+            var imgs = document.getElementsByTagName('img')
+            // 观察器实例
+            let io = new IntersectionObserver((entires) => {
+                console.log(entires);
+                entires.forEach(item => {
+                    // 原图片元素
+                    let oImg = item.target
+                    if (item.intersectionRatio > 0 && item.intersectionRatio <= 1) {
+                        setTimeout(() => {
+                            oImg.setAttribute('src', oImg.getAttribute('data-url'))
+                        }, 1000)
+                    }
+                })
+            })
+            // 给每一个图片设置观察器
+            Array.from(imgs).forEach(element => {
+                io.observe(element)
+            });
+        </script>
+    </body>
+
+</html>
